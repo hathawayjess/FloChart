@@ -5,7 +5,8 @@ module.exports = {
   addCycleData: function(req, res, next) {
     CycleData.create(req.body, function(error, response) {
       if (error) {
-        return res.status(500).json(error);
+        return res.json(error);
+        console.log('error!');
       } else {
         return res.json(response);
       }
@@ -17,3 +18,7 @@ module.exports = {
     })
   }
 }
+
+//find and save empty array
+//if you can find something, set to empty array
+//if not, create array

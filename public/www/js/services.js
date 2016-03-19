@@ -1,26 +1,24 @@
 angular.module('starter.services', [])
 
-.service('SettingsSvc', function($http, $q) {
+.service('SettingsSvc', function($http) {
 
-  // this.postCycleData = function(data) {
-  //   return $http({
-  //     method: 'POST',
-  //     url: 'http://localhost:3000/data/',
-  //     data: data
-  //   }).then(function(response) {
-  //     return response.data;
-  //   })
-  // }
 
-  this.postCycleData = function() {
-    var deferred = $q.defer();
-    $http.post('http://localhost:3000/data/')
-    .then(function(response) {
-      console.log(response);
-      deferred.resolve(response);
+
+  this.testArray = [1, 2, 3, 4, 5]
+
+  this.postCycleData = function(userCycleLengthArray) {
+    console.log(userCycleLengthArray)
+    return $http({
+      method: 'POST',
+      url: 'http://localhost:3000/data/',
+      data: userCycleLengthArray
+    }).success(function(response) {
+      return response.data;
     })
-    return deferred.promise;
   }
+
+
+
 
 })
 

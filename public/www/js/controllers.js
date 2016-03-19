@@ -5,19 +5,16 @@ angular.module('starter.controllers', [])
 
 .controller('SettingsCtrl', function($scope, SettingsSvc) {
 
-  $scope.postData = function(data) {
-    console.log(data)
-    SettingsSvc.postCycleData(data)
-     .then (function(response) {
-      console.log(response);
-    })
- }
+
 
   $scope.cycleLength = '';
-  $scope.cycleLengthArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12,
-                            13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23,
-                            24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34];
+  $scope.cycleLengthArray = [22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34];
   $scope.userCycleLengthArray = [];
+
+  $scope.testArray = function() {
+    console.log($scope.userCycleLengthArray);
+  }
+
 
   $scope.setPhase = function(i) {
     if (i < ($scope.cycleLength - 14)/2) {
@@ -49,11 +46,21 @@ angular.module('starter.controllers', [])
       for (var i = 1; i <= val; i++) {
         $scope.userCycleLengthArray.push($scope.createDay(i)); //$scope.userCycleLengthArray.push(createDay(i))
       }
+      return $scope.userCycleLengthArray;
 
-      console.log($scope.userCycleLengthArray);
   }
 
 
+
+  $scope.postData = function(userCycleLengthArray) {
+    console.log(userCycleLengthArray);
+    SettingsSvc.postCycleData(userCycleLengthArray)
+     .success(function() {
+       console.log('Success!');
+     }).error(function() {
+       console.log('Error!');
+     })
+ }
 })
 
 .controller('CalendarCtrl', function($scope, CalendarSvc) {
@@ -62,7 +69,6 @@ angular.module('starter.controllers', [])
       CalendarSvc.getCycleData()
       .then(function(response) {
         $scope.cycleData = response;
-        console.log($scope.cycleData);
       })
     }
 
