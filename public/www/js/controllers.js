@@ -7,12 +7,12 @@ angular.module('starter.controllers', [])
 })
 .controller('SettingsCtrl', function($scope, SettingsSvc) {
 
-  // $scope.postData = function(data) {
-  //   SettingsSvc.postCycleData(data)
-  //   .then function(response) {
-  //     console.log('did this work?');
-  //   }
-  // }
+  $scope.postData = function(data) {
+    SettingsSvc.postCycleData(data)
+     .then (function(response) {
+      console.log('did this work?');
+    })
+ }
 
   $scope.cycleLength = '';
   $scope.cycleLengthArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12,

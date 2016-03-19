@@ -7,8 +7,9 @@ var backendCtrl = require('./controllers/backendCtrl.js');
 
 var app = express();
 var corsOptions = {
-  origin: 'http://localhost:3000'
+  origin: 'http://localhost:8100'
 };
+
 
 app.use(cors(corsOptions));
 app.use(bodyParser.json());
