@@ -2,15 +2,14 @@ angular.module('starter.controllers', [])
 
 .controller('DashCtrl', function($scope) {})
 
-.factory('calendarFactory', function() {
 
-})
 .controller('SettingsCtrl', function($scope, SettingsSvc) {
 
   $scope.postData = function(data) {
+    console.log(data)
     SettingsSvc.postCycleData(data)
      .then (function(response) {
-      console.log('did this work?');
+      console.log(response);
     })
  }
 
@@ -39,7 +38,7 @@ angular.module('starter.controllers', [])
     var dayObj = {
       index: i,
       phase: $scope.setPhase(i),
-      data: 'do something here to grab data from backend'
+      data: 'do something here to grab daydata from backend'
     }
     return dayObj;
   }
@@ -57,8 +56,18 @@ angular.module('starter.controllers', [])
 
 })
 
-.controller('CalendarCtrl', function($scope) {
-    $scope.cycleLength = 'askjhjahe'
+.controller('CalendarCtrl', function($scope, CalendarSvc) {
+
+    $scope.getData = function() {
+      CalendarSvc.getCycleData()
+      .then(function(response) {
+        $scope.cycleData = response;
+        console.log($scope.cycleData);
+      })
+    }
+
+    $scope.getData();
+
 })
 
 .controller('ChatsCtrl', function($scope, Chats) {

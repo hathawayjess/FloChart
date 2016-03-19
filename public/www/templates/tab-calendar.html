@@ -2,7 +2,7 @@
   <ion-content>
     <div class="row calendar" style="flex-wrap: wrap;">
      <div class="col col-20" id="cycledays"
-     ng-repeat="days in userCycleLengthArray track by $index"
+     ng-repeat="days in cycleData track by $index"
      ng-class= "{'phase1' : days.phase === 1,
                  'ovday' : days.phase === 'ovDay',
                  'phase2' : days.phase === 2,

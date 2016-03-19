@@ -7,4 +7,8 @@ var cycleSchema = new Schema ({
   data: {type: String, required: false}
 })
 
+// var cycleSchema = new Schema ({})
+
+
+
 module.exports = mongoose.model("CycleData", cycleSchema);

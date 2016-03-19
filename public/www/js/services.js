@@ -1,16 +1,35 @@
 angular.module('starter.services', [])
 
-.service('SettingsSvc', function($http) {
+.service('SettingsSvc', function($http, $q) {
+
+  // this.postCycleData = function(data) {
+  //   return $http({
+  //     method: 'POST',
+  //     url: 'http://localhost:3000/data/',
+  //     data: data
+  //   }).then(function(response) {
+  //     return response.data;
+  //   })
+  // }
 
   this.postCycleData = function() {
+    var deferred = $q.defer();
+    $http.post('http://localhost:3000/data/')
+    .then(function(response) {
+      console.log(response);
+      deferred.resolve(response);
+    })
+    return deferred.promise;
+  }
+
+})
+
+.service('CalendarSvc', function($http) {
+
+  this.getCycleData = function() {
     return $http({
-      method: 'POST',
-      url: 'http://localhost:3000/data/',
-      data: {
-        index: 2,
-        phase: 2,
-        data: 'testing frontend connection'
-      }
+      method: 'GET',
+      url: 'http://localhost:3000/data/'
     }).then(function(response) {
       return response.data;
     })
