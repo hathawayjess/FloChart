@@ -1,0 +1,25 @@
+<ion-view view-title="Settings">
+  <ion-content>
+    <select
+    ng-model="cycleLength"
+    ng-change="changedCycleLength(cycleLength)"
+     ng-options="o for o in cycleLengthArray">
+   </select>
+   <div class="row calendar" style="flex-wrap: wrap;">
+    <div class="col col-20" id="cycledays"
+    ng-repeat="days in userCycleLengthArray track by $index"
+    ng-class= "{'phase1' : days.phase === 1,
+                'ovday' : days.phase === 'ovDay',
+                'phase2' : days.phase === 2,
+                'phase3' : days.phase === 3,
+                'phase4' : days.phase === 4}">
+      {{days.index}}
+      </div>
+   </div>
+
+   <button class="button button-positive" ui-sref="tab.calendar">Save Changes</button>
+
+   <button class="button button-positive" ng-click="postData(data)">Test Post</button>
+
+  </ion-content>
+</ion-view>
