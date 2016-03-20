@@ -17,7 +17,7 @@ angular.module('starter.controllers', [])
 
 
   $scope.setPhase = function(i) {
-    if (i < ($scope.cycleLength - 14)/2) {
+    if (i < ($scope.cycleLength - 14) / 2) {
       return 1;
     } else if (i === $scope.cycleLength - 14) {
       return 'ovDay';
@@ -41,12 +41,12 @@ angular.module('starter.controllers', [])
   }
 
   $scope.changedCycleLength = function(val) {
-      $scope.userCycleLengthArray = [];
-      $scope.cycleLength = val;
-      for (var i = 1; i <= val; i++) {
-        $scope.userCycleLengthArray.push($scope.createDay(i)); //$scope.userCycleLengthArray.push(createDay(i))
-      }
-      return $scope.userCycleLengthArray;
+    $scope.userCycleLengthArray = [];
+    $scope.cycleLength = val;
+    for (var i = 1; i <= val; i++) {
+      $scope.userCycleLengthArray.push($scope.createDay(i)); //$scope.userCycleLengthArray.push(createDay(i))
+    }
+    return $scope.userCycleLengthArray;
 
   }
 
@@ -55,13 +55,13 @@ angular.module('starter.controllers', [])
   $scope.postData = function(userCycleLengthArray) {
     console.log(userCycleLengthArray);
     SettingsSvc.postCycleData(userCycleLengthArray)
-     .success(function() {
-       console.log('Success!');
-     }).error(function() {
-       console.log('Error!');
-     })
+      .success(function() {
+        console.log('Success!');
+      }).error(function() {
+        console.log('Error!');
+      })
 
- }
+  }
 })
 
 .controller('CalendarCtrl', function($scope, CalendarSvc) {
@@ -69,14 +69,14 @@ angular.module('starter.controllers', [])
   $scope.$on('$ionicView.enter', function() {
     $scope.getData = function() {
       CalendarSvc.getCycleData()
-      .then(function(response) {
-        $scope.cycleData = response;
-      })
+        .then(function(response) {
+          $scope.cycleData = response;
+        })
     }
 
     $scope.getData();
 
-})
+  })
 })
 
 .controller('ChatsCtrl', function($scope, Chats) {

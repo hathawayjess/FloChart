@@ -17,7 +17,7 @@ app.use(express.static(__dirname + '/public'));
 
 mongoose.set("debug", true);
 mongoose.connect("mongodb://localhost/cycleData");
-mongoose.connection.once("open", function () {
+mongoose.connection.once("open", function() {
   console.log("Connected to MongoDB");
 })
 
@@ -30,6 +30,6 @@ app.get('/data', backendCtrl.getCycleData);
 
 
 
-app.listen(3000, function(){
+app.listen(3000, function() {
   console.log('listening on port ' + 3000);
 });

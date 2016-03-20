@@ -14,39 +14,31 @@ $assertive:                       #ef473a !default;
 $royal:                           #886aea !default;
 $dark:                            #444 !default;
 */
+$positive: #BBBB88 !default;
+$stable: #BBBB88 !default;
 
-
-$positive: #53922B !default;
-$stable: #B4D455 !default;
-
-.calendar {
-  padding: 15px;
-}
 
 .phase1 {
-  color: red;
+  background-color: #EEAA88;
 }
 .ovday {
-  color: green;
+  background-color: green;
 }
 .phase2 {
-  color: blue;
+  background-color: #EEDD99;
 }
 .phase3 {
-  color: orange;
+  background-color: #CCC68D;
 }
 .phase4 {
-  color: gray;
+  background-color: #EEC290;
 }
-
 #cycledays {
   display: inline-block;
-  border: 1px solid #000;
+  border: 1px solid #ffffff;
   padding: 10px;
 }
-
 // The path for our ionicons font files, relative to the built CSS in www/css
 $ionicons-font-path: "../lib/ionic/fonts" !default;
-
 // Include all of Ionic
 @import "www/lib/ionic/scss/ionic";
