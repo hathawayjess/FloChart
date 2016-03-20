@@ -3,6 +3,9 @@ var mongoose = require('mongoose');
 
 module.exports = {
   addCycleData: function(req, res, next) {
+    CycleData.remove(function(error, data) {
+      console.log('removed');
+    })
     CycleData.create(req.body, function(error, response) {
       if (error) {
         return res.json(error);
