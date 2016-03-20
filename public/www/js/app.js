@@ -70,6 +70,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     })
 
   .state('tab.calendar', {
+    cache: false,
     url: '/calendar',
     views: {
       'tab-calendar': {

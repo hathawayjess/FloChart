@@ -60,11 +60,13 @@ angular.module('starter.controllers', [])
      }).error(function() {
        console.log('Error!');
      })
+
  }
 })
 
 .controller('CalendarCtrl', function($scope, CalendarSvc) {
 
+  $scope.$on('$ionicView.enter', function() {
     $scope.getData = function() {
       CalendarSvc.getCycleData()
       .then(function(response) {
@@ -74,6 +76,7 @@ angular.module('starter.controllers', [])
 
     $scope.getData();
 
+})
 })
 
 .controller('ChatsCtrl', function($scope, Chats) {
