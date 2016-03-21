@@ -13,6 +13,9 @@ var cycleSchema = new Schema({
   },
   current: {
     type: Boolean
+  },
+  date: {
+    type: Number
   }
 })
 

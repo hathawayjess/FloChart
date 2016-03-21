@@ -18,6 +18,8 @@ angular.module('starter.controllers', [])
                             27, 28, 29, 30, 31, 32, 33, 34,
                             35, 36, 37, 38, 39];
   $scope.userCycleLengthArray = [];
+  $scope.today = new Date();
+
 
 
   $scope.setPhase = function(i) {
@@ -54,13 +56,17 @@ $scope.setCurrentDayTrue = function(i) {
 
 }
 
+
+
   $scope.createDay = function(i) {
     var dayObj = {
       index: i,
       phase: $scope.setPhase(i),
       data: 'do something here to grab daydata from backend',
-      current: $scope.setCurrentDayTrue(i)
+      current: $scope.setCurrentDayTrue(i),
+      date: $scope.today.getDate()
     }
+    console.log(dayObj.date)
     return dayObj;
   }
 
@@ -91,7 +97,9 @@ $scope.setCurrentDayTrue = function(i) {
 
 .controller('CalendarCtrl', function($scope, CalendarSvc, $ionicModal) {
 
+//check date, if different increment by 1
 
+    $scope.today = new Date();
 
     $ionicModal.fromTemplateUrl('../templates/modal-template.html', {
       scope: $scope,
@@ -119,12 +127,18 @@ $scope.setCurrentDayTrue = function(i) {
     });
 
   $scope.$on('$ionicView.enter', function() {
+
     $scope.getData = function() {
       CalendarSvc.getCycleData()
         .then(function(response) {
           $scope.cycleData = response;
+          console.log($scope.cycleData);
+//           for (var phase in $scope.cycleData) {
+// find out how to target prop on cycleData array of objects
+//           }
         })
     }
+
 
     $scope.getData();
 

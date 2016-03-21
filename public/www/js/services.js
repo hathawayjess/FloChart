@@ -2,10 +2,6 @@ angular.module('starter.services', [])
 
 .service('SettingsSvc', function($http) {
 
-
-
-  this.testArray = [1, 2, 3, 4, 5]
-
   this.postCycleData = function(userCycleLengthArray) {
     console.log(userCycleLengthArray)
     return $http({
