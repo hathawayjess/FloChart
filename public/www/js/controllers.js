@@ -23,7 +23,7 @@ angular.module('starter.controllers', [])
   $scope.setPhase = function(i) {
     if (i < ($scope.cycleLength - 14) / 2) {
       return 1;
-    } else if (i === $scope.cycleLength - 14) {
+    } else if (i === ($scope.cycleLength - 14)) {
       return 'ovDay';
     } else if (i < ($scope.cycleLength - 14)) {
       return 2;
@@ -39,13 +39,27 @@ $scope.setCurrentDay = function(val) {
   $scope.currentDay = val;
   console.log($scope.currentDay)
 }
+$scope.setCycleLength = function(val) {
+  $scope.cycleLength = val;
+  console.log($scope.cycleLength);
+}
+
+$scope.setCurrentDayTrue = function(i) {
+
+    if (i === $scope.currentDay) {
+    return true;
+  } else {
+    return false;
+  }
+
+}
 
   $scope.createDay = function(i) {
     var dayObj = {
       index: i,
       phase: $scope.setPhase(i),
       data: 'do something here to grab daydata from backend',
-      currentDay: $scope.setCurrentDay(i)
+      current: $scope.setCurrentDayTrue(i)
     }
     return dayObj;
   }
@@ -53,7 +67,6 @@ $scope.setCurrentDay = function(val) {
   $scope.changedCycleLength = function(val) {
 
     $scope.userCycleLengthArray = [];
-    $scope.cycleLength = val;
     for (var i = 1; i <= val; i++) {
       $scope.userCycleLengthArray.push($scope.createDay(i)); //$scope.userCycleLengthArray.push(createDay(i))
     }

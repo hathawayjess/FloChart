@@ -6,10 +6,13 @@ var cycleSchema = new Schema({
     type: Number
   },
   phase: {
-    type: Number
+    type: Schema.Types.Mixed
   },
   data: {
     type: String
+  },
+  current: {
+    type: Boolean
   }
 })
 

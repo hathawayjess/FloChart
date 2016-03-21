@@ -52,6 +52,14 @@ $stable: #BBBB88 !default;
 
 .set-button {
   text-align: center;
+}
+
+.options-row {
+  margin-top: 30px;
+}
+
+.save-button {
+  text-align: center;
   margin-top: 30px;
 }
 
@@ -59,11 +67,15 @@ $stable: #BBBB88 !default;
   color: #fff;
 }
 
+.current-day {
+  font-size: 2.5em;
+}
+
 .phase1 {
   background-color: #EEAA88;
 }
 .ovday {
-  background-color: green;
+  background-color: #BBBB88;
 }
 .phase2 {
   background-color: #EEDD99;
@@ -78,6 +90,8 @@ $stable: #BBBB88 !default;
   display: inline-block;
   border: 1px solid #ffffff;
   padding: 10px;
+  border-radius: 2px;
+
 }
 // The path for our ionicons font files, relative to the built CSS in www/css
 $ionicons-font-path: "../lib/ionic/fonts" !default;

@@ -40,17 +40,26 @@ $dark:                            #444 !default;
   height: 70%; }
 
 .set-button {
+  text-align: center; }
+
+.options-row {
+  margin-top: 30px; }
+
+.save-button {
   text-align: center;
   margin-top: 30px; }
 
 .test {
   color: #fff; }
 
+.current-day {
+  font-size: 2.5em; }
+
 .phase1 {
   background-color: #EEAA88; }
 
 .ovday {
-  background-color: green; }
+  background-color: #BBBB88; }
 
 .phase2 {
   background-color: #EEDD99; }
@@ -64,7 +73,8 @@ $dark:                            #444 !default;
 #cycledays {
   display: inline-block;
   border: 1px solid #ffffff;
-  padding: 10px; }
+  padding: 10px;
+  border-radius: 2px; }
 
 /*!
   Ionicons, v2.0.1

@@ -10,14 +10,14 @@
     </div> -->
 
 
-
-<div class="set-button">
-    <button class="button button-positive button-large"
+<div class="row options-row">
+<div class="set-button col">
+    <button class="button button-stable button-outline"
     modal-select=""
     ng-model="cycleLength"
     options="cycleLengthArray"
     modal-title="Select cycle length"
-    on-select="changedCycleLength(cycleLength); postData(userCycleLengthArray)">
+    on-select="setCycleLength(cycleLength)">
     Set Cycle Length
       <div class="option">
         {{option}}
@@ -26,8 +26,8 @@
       <h2>{{cycleLength}} days</h2>
 </div>
 
-<div class="set-button">
-    <button class="button button-positive button-large"
+<div class="set-button col">
+    <button class="button button-stable button-outline"
     modal-select=""
     ng-model="currentDay"
     options="currentDayArray"
@@ -39,6 +39,14 @@
       </div>
     </button>
       <h2>Day {{currentDay}}</h2>
+</div>
+</div>
+
+<div class="save-button">
+  <button class="button button-positive button-large"
+  ng-click="changedCycleLength(cycleLength); postData(userCycleLengthArray)">
+  Save Changes
+</button>
 </div>
 
 
