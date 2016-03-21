@@ -7,7 +7,21 @@ angular.module('starter.controllers', [])
 
 
 
-  $scope.cycleLength = '';
+  $scope.cycleLength = 0;
+  // $scope.cycleLengthArray = [
+  //   {text: '22', value: 22},
+  //   {text: '22', value: 22},
+  //   {text: '22', value: 22},
+  //   {text: '22', value: 22},
+  //   {text: '22', value: 22},
+  //   {text: '22', value: 22},
+  //   {text: '22', value: 22},
+  //   {text: '22', value: 22},
+  //   {text: '22', value: 22},
+  //   {text: '22', value: 22},
+  //   {text: '22', value: 22},
+  //   {text: '22', value: 22},
+  //   {text: '22', value: 22} ];
   $scope.cycleLengthArray = [22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34];
   $scope.userCycleLengthArray = [];
 
@@ -41,11 +55,13 @@ angular.module('starter.controllers', [])
   }
 
   $scope.changedCycleLength = function(val) {
+
     $scope.userCycleLengthArray = [];
     $scope.cycleLength = val;
     for (var i = 1; i <= val; i++) {
       $scope.userCycleLengthArray.push($scope.createDay(i)); //$scope.userCycleLengthArray.push(createDay(i))
     }
+    console.log($scope.userCycleLengthArray)
     return $scope.userCycleLengthArray;
 
   }

@@ -17,6 +17,18 @@ $dark:                            #444 !default;
 $positive: #BBBB88 !default;
 $stable: #BBBB88 !default;
 
+.calendar {
+  height: 70%;
+}
+
+#set-button {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.test {
+  color: #fff;
+}
 
 .phase1 {
   background-color: #EEAA88;
@@ -31,7 +43,7 @@ $stable: #BBBB88 !default;
   background-color: #CCC68D;
 }
 .phase4 {
-  background-color: #EEC290;
+  background-color: #b1c19f;
 }
 #cycledays {
   display: inline-block;

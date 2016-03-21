@@ -1,12 +1,32 @@
 <ion-view view-title="Settings">
   <ion-content>
-    <select ng-model="cycleLength" ng-change="changedCycleLength(cycleLength)" ng-options="o for o in cycleLengthArray">
-    </select>
-    
-    <div>
+    <!--<select ng-model="cycleLength" ng-change="changedCycleLength(cycleLength)" ng-options="o for o in cycleLengthArray">
+    </select>-->
+
+    <!-- <div>
       <button class="button button-positive" ui-sref="tab.calendar" ui-sref-opts="{reload: true, notify:true}" ng-click="postData(userCycleLengthArray)">Save Changes</button>
 
-      <button class="button button-positive" ng-click="testArray()">Test Array</button>
-    </div>
+
+    </div> -->
+
+
+
+<div id="set-button">
+    <button class="button button-positive button-large"
+    modal-select=""
+    ng-model="cycleLength"
+    options="cycleLengthArray"
+    modal-title="Select cycle length"
+    on-select="changedCycleLength(cycleLength); postData(userCycleLengthArray)">
+    Set Cycle Length
+      <div class="option">
+        {{option}}
+      </div>
+    </button>
+      <h2>{{cycleLength}} days</h2>
+</div>
+
+
+
   </ion-content>
 </ion-view>
