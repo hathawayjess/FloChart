@@ -11,7 +11,7 @@
 
 
 
-<div id="set-button">
+<div class="set-button">
     <button class="button button-positive button-large"
     modal-select=""
     ng-model="cycleLength"
@@ -24,6 +24,21 @@
       </div>
     </button>
       <h2>{{cycleLength}} days</h2>
+</div>
+
+<div class="set-button">
+    <button class="button button-positive button-large"
+    modal-select=""
+    ng-model="currentDay"
+    options="currentDayArray"
+    modal-title="Select current day"
+    on-select="setCurrentDay(currentDay)">
+    Set Current Day
+      <div class="option">
+        {{option}}
+      </div>
+    </button>
+      <h2>Day {{currentDay}}</h2>
 </div>
 
 

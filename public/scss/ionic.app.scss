@@ -17,11 +17,40 @@ $dark:                            #444 !default;
 $positive: #BBBB88 !default;
 $stable: #BBBB88 !default;
 
+
+
+
+.close {
+  float: right;
+  color: gray;
+}
+
+//Scale-In Animation
+.scale-in {
+  transform: scale(0.9);
+  opacity: 0;
+}
+.scale-in.ng-enter,
+.scale-in > .ng-enter {
+  transition: all cubic-bezier(.1, .7, .1, 1) 400ms;
+}
+
+.scale-in.ng-enter-active,
+.scale-in > .ng-enter-active {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.scale-in.ng-leave,
+.scale-in > .ng-leave {
+  transition: all ease-in-out 250ms;
+}
+
 .calendar {
   height: 70%;
 }
 
-#set-button {
+.set-button {
   text-align: center;
   margin-top: 30px;
 }
@@ -43,7 +72,7 @@ $stable: #BBBB88 !default;
   background-color: #CCC68D;
 }
 .phase4 {
-  background-color: #b1c19f;
+  background-color: #B1C19F;
 }
 #cycledays {
   display: inline-block;

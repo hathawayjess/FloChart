@@ -7,27 +7,17 @@ angular.module('starter.controllers', [])
 
 
 
-  $scope.cycleLength = 0;
-  // $scope.cycleLengthArray = [
-  //   {text: '22', value: 22},
-  //   {text: '22', value: 22},
-  //   {text: '22', value: 22},
-  //   {text: '22', value: 22},
-  //   {text: '22', value: 22},
-  //   {text: '22', value: 22},
-  //   {text: '22', value: 22},
-  //   {text: '22', value: 22},
-  //   {text: '22', value: 22},
-  //   {text: '22', value: 22},
-  //   {text: '22', value: 22},
-  //   {text: '22', value: 22},
-  //   {text: '22', value: 22} ];
-  $scope.cycleLengthArray = [22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34];
+  $scope.cycleLength = 28;
+  $scope.currentDay = 1;
+  $scope.cycleLengthArray = [22, 23, 24, 25, 26, 27, 28, 29,
+                             30, 31, 32, 33, 34, 35, 36, 37,
+                             38, 39];
+  $scope.currentDayArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
+                            11, 12, 13, 14, 15, 16, 17, 18,
+                            19, 20, 21, 22, 23, 24, 25, 26,
+                            27, 28, 29, 30, 31, 32, 33, 34,
+                            35, 36, 37, 38, 39];
   $scope.userCycleLengthArray = [];
-
-  $scope.testArray = function() {
-    console.log($scope.userCycleLengthArray);
-  }
 
 
   $scope.setPhase = function(i) {
@@ -45,11 +35,17 @@ angular.module('starter.controllers', [])
 
   }
 
+$scope.setCurrentDay = function(val) {
+  $scope.currentDay = val;
+  console.log($scope.currentDay)
+}
+
   $scope.createDay = function(i) {
     var dayObj = {
       index: i,
       phase: $scope.setPhase(i),
-      data: 'do something here to grab daydata from backend'
+      data: 'do something here to grab daydata from backend',
+      currentDay: $scope.setCurrentDay(i)
     }
     return dayObj;
   }
@@ -80,7 +76,34 @@ angular.module('starter.controllers', [])
   }
 })
 
-.controller('CalendarCtrl', function($scope, CalendarSvc) {
+.controller('CalendarCtrl', function($scope, CalendarSvc, $ionicModal) {
+
+
+
+    $ionicModal.fromTemplateUrl('../templates/modal-template.html', {
+      scope: $scope,
+      animation: 'scale-in'
+    }).then(function(modal) {
+      $scope.modal = modal;
+    });
+    $scope.openModal = function() {
+      $scope.modal.show();
+    };
+    $scope.closeModal = function() {
+      $scope.modal.hide();
+    };
+    //Cleanup the modal when we're done with it!
+    $scope.$on('$destroy', function() {
+      $scope.modal.remove();
+    });
+    // Execute action on hide modal
+    $scope.$on('modal.hidden', function() {
+      // Execute action
+    });
+    // Execute action on remove modal
+    $scope.$on('modal.removed', function() {
+      // Execute action
+    });
 
   $scope.$on('$ionicView.enter', function() {
     $scope.getData = function() {
