@@ -97,9 +97,7 @@ $scope.setCurrentDayTrue = function(i) {
 
 .controller('CalendarCtrl', function($scope, CalendarSvc, $ionicModal) {
 
-//check date, if different increment by 1
 
-    $scope.today = new Date();
 
     $ionicModal.fromTemplateUrl('../templates/modal-template.html', {
       scope: $scope,
@@ -128,11 +126,28 @@ $scope.setCurrentDayTrue = function(i) {
 
   $scope.$on('$ionicView.enter', function() {
 
+    $scope.today = (new Date()).getDate();
+
+
     $scope.getData = function() {
       CalendarSvc.getCycleData()
         .then(function(response) {
           $scope.cycleData = response;
-          console.log($scope.cycleData);
+
+          for (var i = 0; i < $scope.cycleData.length; i++) {
+            $scope.current = $scope.cycleData[i].current;
+            $scope.date = $scope.cycleData[i].date;
+
+            if ($scope.current === true && $scope.date < $scope.today) {
+              $scope.cycleData[i].current = false;
+              i = i + ($scope.today - $scope.date);
+              $scope.cycleData[i].current = true;
+              console.log($scope.today - $scope.date)
+            }
+
+
+          console.log($scope.cycleData[i].current);
+        }
 //           for (var phase in $scope.cycleData) {
 // find out how to target prop on cycleData array of objects
 //           }
