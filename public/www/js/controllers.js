@@ -147,7 +147,8 @@ angular.module('starter.controllers', [])
   }).then(function(modal) {
     $scope.modal = modal;
   });
-  $scope.openModal = function() {
+  $scope.openModal = function(data) {
+    $scope.modal.days = data
     $scope.modal.show();
   };
   $scope.closeModal = function() {
