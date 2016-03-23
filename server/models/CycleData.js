@@ -12,7 +12,7 @@ var cycleSchema = new Schema({
     type: Schema.Types.Mixed
   },
   data: {
-    type: String
+      string: {type: String}
   },
   current: {
     type: Boolean
