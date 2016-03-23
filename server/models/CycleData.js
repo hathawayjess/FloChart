@@ -2,6 +2,9 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var cycleSchema = new Schema({
+  _id: {
+    type: Number
+  },
   index: {
     type: Number
   },
@@ -19,7 +22,7 @@ var cycleSchema = new Schema({
   }
 })
 
-//gamify devmountain
+
 
 
 

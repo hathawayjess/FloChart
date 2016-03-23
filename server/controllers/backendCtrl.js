@@ -1,27 +1,27 @@
 var CycleData = require('../models/CycleData.js');
+var DayData = require('../models/DaySchema.js')
 var mongoose = require('mongoose');
+
+//function
 
 module.exports = {
   addCycleData: function(req, res, next) {
     CycleData.remove(function(error, data) {
-      console.log('removed');
     })
     CycleData.create(req.body, function(error, response) {
-      if (error) {
-        return res.json(error);
-        console.log('error!');
-      } else {
-        return res.json(response);
-      }
+      if (error) return res.status(500).send(error);
+      res.send(response);
     })
   },
   getCycleData: function(req, res, next) {
-    CycleData.find(function(error, data) {
+    CycleData.find(req.body)
+    .exec(function(error, data) {
+      if (error) return res.status(500).send(error);
       return res.status(200).send(data);
     })
   }
+
 }
 
-//find and save empty array
-//if you can find something, set to empty array
-//if not, create array
+//req.params.id
+//DayData.find index === req.params.id
