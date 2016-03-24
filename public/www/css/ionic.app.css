@@ -59,7 +59,9 @@ $dark:                            #444 !default;
   background-color: #EEAA88; }
 
 .ovday {
-  background-color: #BBBB88; }
+  background-color: #BBBB88;
+  background-image: url("../img/ovegg2.png");
+  background-size: cover; }
 
 .phase2 {
   background-color: #EEDD99; }

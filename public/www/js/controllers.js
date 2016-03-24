@@ -37,7 +37,7 @@ angular.module('starter.controllers', [])
   }, {
     string: 'test7'
   }, {
-    string: 'test8'
+    string: 'test8' //8 through 19 will be similar
   }, {
     string: 'test9'
   }, {
@@ -61,7 +61,7 @@ angular.module('starter.controllers', [])
   }, {
     string: 'test19'
   }, {
-    string: 'test20'
+    string: 'Ovulation Day'
   }, {
     string: 'test21'
   }, {
@@ -125,25 +125,22 @@ angular.module('starter.controllers', [])
   }
 
 
-  $scope.setDayData = function(i) {
-    $scope.finalWeeks = ($scope.cycleLength - 14);
-    $scope.userFullArray = [];
 
+  $scope.setDayData = function(i) {
+    $scope.cycleMinus = ($scope.cycleLength - 14);
+    $scope.userFullArray = [];
 
     for (var i = 0; i < $scope.cycleLength; i++) {
       $scope.userFullArray.push(i);
     }
 
-    $scope.userFullArray.splice($scope.finalWeeks, 14, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34);
-
+    $scope.userFullArray.splice($scope.cycleMinus, 14, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34);
     return $scope.userFullArray;
   }
 
   $scope.setDayData2 = function(i) {
     $scope.setDayData(i)
-
     return $scope.userFullArray[i]
-
 
   }
 
