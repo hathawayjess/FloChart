@@ -19,10 +19,19 @@ $stable: #BBBB88 !default;
 
 
 
+[ng-click],
+[data-ng-click],
+[x-ng-click] {
+  cursor: pointer;
+}
 
 .close {
-  float: right;
+  font-size: 1.7em;
+  text-align: right;
   color: gray;
+  margin-right: 20px;
+  margin-top: 10px;
+  margin-bottom: 25px;
 }
 
 //Scale-In Animation
@@ -64,7 +73,7 @@ $stable: #BBBB88 !default;
 }
 
 .test {
-  color: #fff;
+  color: #000;
 }
 
 .current-day {
@@ -97,18 +106,25 @@ $stable: #BBBB88 !default;
 
 }
 
-#estrogen-arrow {
+.font-style {
+  font-weight: 500;
+  letter-spacing: 0.05em;
+}
+
+.est {
   color: #EEAA88;
-  font-size: 1em;
 }
 
-#progesterone-arrow {
+.prog {
   color: #B1C19F;
-  font-size: 1em;
+}
+.estrogen-arrow, .progesterone-arrow {
+  font-size: 3em;
+  margin-right: 5px;
 }
 
-.arrow i {
-  font-size: 3em;
+.modal h2 {
+  color: gray;
 }
 
 
