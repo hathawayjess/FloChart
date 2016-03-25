@@ -2,6 +2,15 @@
   <ion-content>
         <i class="icon close ion-close-round"></i>
     <h1 class="title">Day {{modal.days.index}}</h1>
+    <div class="arrow"><i id="estrogen-arrow" ng-class="{
+      'icon ion-arrow-up-a' : modal.days.phase === 1 || modal.days.phase === 2 || modal.days.phase === 'ovDay',
+      'icon ion-arrow-down-a' : modal.days.phase === 3 || modal.days.phase === 4
+    }">ESTROGEN</i></div>
+
+    <div class="arrow"><i id="progesterone-arrow" ng-class="{
+      'icon ion-arrow-right-a' : modal.days.phase === 1 || modal.days.phase === 2,
+      'icon ion-arrow-up-a' : modal.days.phase === 'ovDay' || modal.days.phase === 3 || modal.days.phase === 4
+    }">PROGESTERONE</i></div>
 
   <h2>{{modal.days.data.string}}</h2>
 

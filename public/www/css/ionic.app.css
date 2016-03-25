@@ -78,6 +78,29 @@ $dark:                            #444 !default;
   padding: 10px;
   border-radius: 2px; }
 
+#estrogen-arrow {
+  color: #EEAA88;
+  font-size: 1em; }
+
+#progesterone-arrow {
+  color: #B1C19F;
+  font-size: 1em; }
+
+.arrow i {
+  font-size: 3em; }
+
+.ovday-modal {
+  color: #BBBB88; }
+
+.phase2-modal {
+  color: #EEDD99; }
+
+.phase3-modal {
+  color: #CCC68D; }
+
+.phase4-modal {
+  color: #B1C19F; }
+
 /*!
   Ionicons, v2.0.1
   Created by Ben Sperry for the Ionic Framework, http://ionicons.com/

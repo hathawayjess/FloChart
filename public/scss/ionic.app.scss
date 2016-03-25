@@ -96,6 +96,39 @@ $stable: #BBBB88 !default;
   border-radius: 2px;
 
 }
+
+#estrogen-arrow {
+  color: #EEAA88;
+  font-size: 1em;
+}
+
+#progesterone-arrow {
+  color: #B1C19F;
+  font-size: 1em;
+}
+
+.arrow i {
+  font-size: 3em;
+}
+
+
+
+
+.ovday-modal {
+  color: #BBBB88;
+}
+
+.phase2-modal {
+  color: #EEDD99;
+}
+
+.phase3-modal {
+  color: #CCC68D;
+}
+
+.phase4-modal {
+  color: #B1C19F;
+}
 // The path for our ionicons font files, relative to the built CSS in www/css
 $ionicons-font-path: "../lib/ionic/fonts" !default;
 // Include all of Ionic
