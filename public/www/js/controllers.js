@@ -5,6 +5,15 @@ angular.module('starter.controllers', [])
 
 .controller('SettingsCtrl', function($scope, SettingsSvc) {
 
+  $scope.getDayData = function() {
+    SettingsSvc.getDayData()
+      .then(function(response) {
+        $scope.dayData = response;
+        console.log($scope.dayData)
+      })
+  }
+
+  $scope.getDayData();
 
 
   $scope.cycleLength = '';
@@ -20,77 +29,6 @@ angular.module('starter.controllers', [])
   $scope.userCycleLengthArray = [];
   $scope.today = new Date();
 
-  $scope.dayData = [{
-    string: 'test0'
-  }, {
-    string: 'test1'
-  }, {
-    string: 'test2'
-  }, {
-    string: 'test3'
-  }, {
-    string: 'test4'
-  }, {
-    string: 'test5'
-  }, {
-    string: 'test6'
-  }, {
-    string: 'test7'
-  }, {
-    string: 'test8' //8 through 19 will be similar
-  }, {
-    string: 'test9'
-  }, {
-    string: 'test10'
-  }, {
-    string: 'test11'
-  }, {
-    string: 'test12'
-  }, {
-    string: 'test13'
-  }, {
-    string: 'test14'
-  }, {
-    string: 'test15'
-  }, {
-    string: 'test16'
-  }, {
-    string: 'test17'
-  }, {
-    string: 'test18'
-  }, {
-    string: 'test19'
-  }, {
-    string: 'Ovulation Day'
-  }, {
-    string: 'test21'
-  }, {
-    string: 'test22'
-  }, {
-    string: 'test23'
-  }, {
-    string: 'test24'
-  }, {
-    string: 'test25'
-  }, {
-    string: 'test26'
-  }, {
-    string: 'test27'
-  }, {
-    string: 'test28'
-  }, {
-    string: 'test29'
-  }, {
-    string: 'test30'
-  }, {
-    string: 'test31'
-  }, {
-    string: 'test32'
-  }, {
-    string: 'test33'
-  }, {
-    string: 'test34'
-  }]
 
   $scope.setPhase = function(i) {
     if (i < ($scope.cycleLength - 14) / 2) {
@@ -168,7 +106,7 @@ angular.module('starter.controllers', [])
 
   }
 
-
+  //http get once json is moved to the backend
 
   $scope.postData = function(userCycleLengthArray) {
 
@@ -180,10 +118,11 @@ angular.module('starter.controllers', [])
       })
 
   }
+
 })
 
-.controller('CalendarCtrl', function($scope, CalendarSvc, $ionicModal) {
 
+.controller('CalendarCtrl', function($scope, CalendarSvc, $ionicModal) {
 
 
   $ionicModal.fromTemplateUrl('../templates/modal-template.html', {
@@ -241,6 +180,9 @@ angular.module('starter.controllers', [])
     $scope.getData();
 
   })
+
+
+
 })
 
 .controller('ChatsCtrl', function($scope, Chats) {

@@ -26,7 +26,9 @@ mongoose.connection.once("open", function() {
 app.post('/data', backendCtrl.addCycleData);
 app.get('/data', backendCtrl.getCycleData);
 
-// app.get('/data', backendCtrl.getDayData);
+app.post('/daydata', backendCtrl.postDayData);
+app.get('/daydata', backendCtrl.getDayData);
+
 
 
 

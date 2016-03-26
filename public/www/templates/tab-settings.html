@@ -1,45 +1,35 @@
 <ion-view view-title="Settings">
   <ion-content>
 
-<div class="row options-row">
-<div class="set-button col">
-    <button class="button button-stable button-outline"
-    modal-select=""
-    ng-model="cycleLength"
-    options="cycleLengthArray"
-    modal-title="Select cycle length"
-    on-select="setCycleLength(cycleLength)">
-    Set Cycle Length
-      <div class="option">
-        {{option}}
+    <div class="row options-row">
+      <div class="set-button col">
+        <button class="button button-stable button-outline" modal-select="" ng-model="cycleLength" options="cycleLengthArray" modal-title="Select cycle length" on-select="setCycleLength(cycleLength)">
+          Set Cycle Length
+          <div class="option">
+            {{option}}
+          </div>
+        </button>
+        <h2>{{cycleLength}} days</h2>
       </div>
-    </button>
-      <h2>{{cycleLength}} days</h2>
-</div>
 
-<div class="set-button col">
-    <button class="button button-stable button-outline"
-    modal-select=""
-    ng-model="currentDay"
-    options="currentDayArray"
-    modal-title="Select current day"
-    on-select="setCurrentDay(currentDay)">
-    Set Current Day
-      <div class="option">
-        {{option}}
+      <div class="set-button col">
+        <button class="button button-stable button-outline" modal-select="" ng-model="currentDay" options="currentDayArray" modal-title="Select current day" on-select="setCurrentDay(currentDay)">
+          Set Current Day
+          <div class="option">
+            {{option}}
+          </div>
+        </button>
+        <h2>Day {{currentDay}}</h2>
       </div>
-    </button>
-      <h2>Day {{currentDay}}</h2>
-</div>
-</div>
+    </div>
 
-<div class="save-button">
-  <button class="button button-positive button-large"
-  ng-click="changedCycleLength(cycleLength); postData(userCycleLengthArray)"
-  ui-sref="tab.calendar">
-  Save Changes
-</button>
-</div>
+    <div class="save-button">
+      <button class="button button-positive button-large" ng-click="changedCycleLength(cycleLength); postData(userCycleLengthArray)" ui-sref="tab.calendar">
+        Save Changes
+      </button>
+    </div>
+
+
 
 
 

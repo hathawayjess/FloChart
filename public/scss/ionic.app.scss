@@ -56,7 +56,7 @@ $stable: #BBBB88 !default;
 }
 
 .calendar {
-  height: 70%;
+  min-height: 60%;
 }
 
 .set-button {
@@ -103,7 +103,7 @@ $stable: #BBBB88 !default;
   border: 1px solid #ffffff;
   padding: 10px;
   border-radius: 2px;
-
+  height: 65px;
 }
 
 .font-style {

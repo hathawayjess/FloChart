@@ -3,7 +3,6 @@ angular.module('starter.services', [])
 .service('SettingsSvc', function($http) {
 
   this.postCycleData = function(userCycleLengthArray) {
-    console.log(userCycleLengthArray)
     return $http({
       method: 'POST',
       url: 'http://localhost:3000/data/',
@@ -13,8 +12,14 @@ angular.module('starter.services', [])
     })
   }
 
-
-
+  this.getDayData = function() {
+    return $http({
+      method: 'GET',
+      url: 'http://localhost:3000/daydata/'
+    }).then(function(response, $scope) {
+      return response.data;
+    })
+  }
 
 })
 

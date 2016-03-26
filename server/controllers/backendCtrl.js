@@ -1,13 +1,12 @@
 var CycleData = require('../models/CycleData.js');
-var DayData = require('../models/DaySchema.js')
+var DayData = require('../models/DayData.js')
 var mongoose = require('mongoose');
 
 //function
 
 module.exports = {
   addCycleData: function(req, res, next) {
-    CycleData.remove(function(error, data) {
-    })
+    CycleData.remove(function(error, data) {})
     CycleData.create(req.body, function(error, response) {
       if (error) return res.status(500).send(error);
       res.send(response);
@@ -15,10 +14,23 @@ module.exports = {
   },
   getCycleData: function(req, res, next) {
     CycleData.find(req.body)
-    .exec(function(error, data) {
+      .exec(function(error, data) {
+        if (error) return res.status(500).send(error);
+        return res.status(200).send(data);
+      })
+  },
+  postDayData: function(req, res, next) {
+    DayData.create(req.body, function(error, response) {
       if (error) return res.status(500).send(error);
-      return res.status(200).send(data);
+      res.send(response);
     })
+  },
+  getDayData: function(req, res, next) {
+    DayData.find(req.body)
+      .exec(function(error, data) {
+        if (error) return res.status(500).send(error);
+        res.send(data);
+      })
   }
 
 }

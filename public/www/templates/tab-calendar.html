@@ -1,17 +1,14 @@
 <ion-view view-title="Calendar">
   <ion-content>
     <div class="row calendar padding" style="flex-wrap: wrap;">
-     <div class="col col-20" id="cycledays"
-     ng-repeat="days in cycleData track by $index | orderBy: $index"
-     ng-class= "{'phase1' : days.phase === 1,
+      <div class="col col-20" id="cycledays" ng-repeat="days in cycleData track by $index | orderBy: $index" ng-class="{'phase1' : days.phase === 1,
                  'ovday' : days.phase === 'ovDay',
                  'phase2' : days.phase === 2,
                  'phase3' : days.phase === 3,
                  'phase4' : days.phase === 4,
-                 'current-day' : days.current === true}"
-      ng-click="openModal(days)">
-       {{days.index}}
-     </div>
+                 'current-day' : days.current === true}" ng-click="openModal(days)">
+        {{days.index}}
+      </div>
     </div>
   </ion-content>
 </ion-view>

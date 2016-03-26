@@ -46,7 +46,7 @@ $dark:                            #444 !default;
   transition: all ease-in-out 250ms; }
 
 .calendar {
-  height: 70%; }
+  min-height: 60%; }
 
 .set-button {
   text-align: center; }
@@ -85,7 +85,8 @@ $dark:                            #444 !default;
   display: inline-block;
   border: 1px solid #ffffff;
   padding: 10px;
-  border-radius: 2px; }
+  border-radius: 2px;
+  height: 65px; }
 
 .font-style {
   font-weight: 500;
