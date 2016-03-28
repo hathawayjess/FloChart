@@ -17,7 +17,19 @@ $dark:                            #444 !default;
 $positive: #BBBB88 !default;
 $stable: #BBBB88 !default;
 
+#blurb p {
+  font-size: 1.2em;
+  line-height: 1.2;
+  padding: 15px;
+}
 
+.chart {
+  height: 50%;
+}
+.chart img {
+  max-width: 100%;
+  min-height: 100%;
+}
 
 [ng-click],
 [data-ng-click],

@@ -15,6 +15,18 @@ $assertive:                       #ef473a !default;
 $royal:                           #886aea !default;
 $dark:                            #444 !default;
 */
+#blurb p {
+  font-size: 1.2em;
+  line-height: 1.2;
+  padding: 15px; }
+
+.chart {
+  height: 50%; }
+
+.chart img {
+  max-width: 100%;
+  min-height: 100%; }
+
 [ng-click],
 [data-ng-click],
 [x-ng-click] {
