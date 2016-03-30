@@ -127,18 +127,36 @@ angular.module('starter.controllers', [])
 .controller('CalendarCtrl', function($scope, CalendarSvc, $ionicModal) {
 
 
-  $ionicModal.fromTemplateUrl('../templates/modal-template.html', {
+  $ionicModal.fromTemplateUrl('../templates/modal-template-day-info.html', {
+    id: '1',
     scope: $scope,
     animation: 'scale-in'
   }).then(function(modal) {
     $scope.modal = modal;
   });
-  $scope.openModal = function(data) {
-    $scope.modal.days = data
-    $scope.modal.show();
+
+  $ionicModal.fromTemplateUrl('../templates/modal-template-phase-info.html', {
+    id: '2',
+    scope: $scope,
+    animation: 'scale-in'
+  }).then(function(modal) {
+    $scope.modal2 = modal;
+  })
+
+  $scope.openModal = function(index, days) {
+    if (index === 1) {
+      $scope.modal.days = days;
+      $scope.modal.show();
+    } else {
+      $scope.modal2.show();
+    }
   };
-  $scope.closeModal = function() {
-    $scope.modal.hide();
+  $scope.closeModal = function(index) {
+    if (index === 1) {
+      $scope.modal.hide();
+    } else {
+      $scope.modal2.hide();
+    }
   };
   //Cleanup the modal when we're done with it!
   $scope.$on('$destroy', function() {

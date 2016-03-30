@@ -17,13 +17,52 @@ $dark:                            #444 !default;
 $positive: #BBBB88 !default;
 $stable: #BBBB88 !default;
 
-::-webkit-scrollbar,
-*::-webkit-scrollbar {
-  display: none;
+.calendar p {
+  font-size: 1.5em !important;
+  padding-top: 50px;
+}
+
+.calendar.overflow-scroll {
+  overflow-y: hidden;
+}
+
+hr {
+  border: 0;
+height: 0;
+width: 80px;
+border-top: 1px solid rgba(0, 0, 0, 0.1);
+border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.physically {
+  color: #EEAA88 !important;
+  font-weight: bold;
+}
+
+.info h3 {
+  color: #BBBB88 !important;
+}
+
+.dash-paragraph {
+  padding-left: 20px !important;
+}
+p {
+  color: #404040 !important;
+  font-size: 1.1em !important;
+}
+
+ p.dash-paragraph::first-letter {
+  float: left;
+  font-size: 1.7em;
 }
 
 #graph {
   width: 100%;
+  margin-bottom: 5px;
+}
+
+.scroll {
+    margin-top: 10px !important;
 }
 
 .tab-item.tab-item-active {
@@ -88,10 +127,14 @@ $stable: #BBBB88 !default;
 .close {
   font-size: 1.7em;
   text-align: right;
-  color: gray;
+  color: #404040;
   margin-right: 20px;
   margin-top: 10px;
   margin-bottom: 25px;
+}
+
+.close-info {
+  margin-bottom: 5px;
 }
 
 //Scale-In Animation
@@ -117,6 +160,7 @@ $stable: #BBBB88 !default;
 
 .calendar {
   min-height: 60%;
+  padding-top: 20px !important;
 }
 
 .set-button {
