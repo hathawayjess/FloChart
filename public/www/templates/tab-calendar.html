@@ -9,7 +9,11 @@
                  'current-day' : days.current === true}" ng-click="openModal(1, days)">
         {{days.index}}
       </div>
-        <p class="padding">Want to know more about the phases? <a ng-click="openModal(2)">Click here.</a></p>
     </div>
+
+    <div class="padding center learn-more">
+      <button class="button button-large button-positive icon-left ion-help" ng-click="openModal(2)">Learn more about the phases</button>
+    </div>
+
   </ion-content>
 </ion-view>

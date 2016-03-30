@@ -18,8 +18,8 @@ angular.module('starter.controllers', [])
   $scope.getDayData();
 
 
-  $scope.cycleLength = '';
-  $scope.currentDay = '';
+  $scope.cycleLength = 28;
+  $scope.currentDay = 1;
   $scope.cycleLengthArray = [22, 23, 24, 25, 26, 27, 28, 29,
     30, 31, 32, 33, 34
   ];
