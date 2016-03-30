@@ -181,7 +181,8 @@ p.dash-paragraph::first-letter {
 .prog {
   color: #B1C19F; }
 
-.estrogen-arrow, .progesterone-arrow {
+.estrogen-arrow,
+.progesterone-arrow {
   font-size: 3em;
   margin-right: 5px; }
 
