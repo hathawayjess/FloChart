@@ -15,6 +15,37 @@ $assertive:                       #ef473a !default;
 $royal:                           #886aea !default;
 $dark:                            #444 !default;
 */
+.center {
+  text-align: center; }
+
+.pink {
+  color: #EEAA88; }
+
+button.button.button-icon:before {
+  font-size: 10em !important;
+  color: #EDEBD3;
+  margin-bottom: 50px; }
+
+.set-button {
+  text-align: center;
+  margin-top: 50px; }
+
+button.button.button-icon.ion-android-refresh::after {
+  content: 'Set Cycle Length';
+  font-variant: small-caps;
+  font-size: 1.2em;
+  color: #BBBB88;
+  font-weight: bold;
+  padding-top: 3px; }
+
+button.button.button-icon.ion-android-calendar::after {
+  content: 'Set Day of Cycle';
+  font-variant: small-caps;
+  font-size: 1.2em;
+  color: #BBBB88;
+  font-weight: bold;
+  padding-top: 3px; }
+
 .calendar p {
   font-size: 1.5em !important;
   padding-top: 50px; }
@@ -133,9 +164,6 @@ p.dash-paragraph::first-letter {
 .calendar {
   min-height: 60%;
   padding-top: 20px !important; }
-
-.set-button {
-  text-align: center; }
 
 .options-row {
   margin-top: 30px; }

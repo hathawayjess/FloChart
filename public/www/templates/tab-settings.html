@@ -1,25 +1,35 @@
 <ion-view view-title="Settings">
   <ion-content>
+      <h4 class="padding stable center">You are on day <span class="pink">{{currentDay}}</span> of a <span class="pink">{{cycleLength}}</span> day cycle.</h4>
 
     <div class="row options-row">
       <div class="set-button col">
-        <button class="button button-stable button-outline" modal-select="" ng-model="cycleLength" options="cycleLengthArray" modal-title="Select cycle length" on-select="setCycleLength(cycleLength)">
-          Set Cycle Length
+        <button class="button button-icon icon ion-android-refresh"
+        modal-select=""
+        ng-model="cycleLength"
+        options="cycleLengthArray"
+        modal-title="Select cycle length"
+        on-select="setCycleLength(cycleLength)">
+          <!-- Set Cycle Length -->
           <div class="option">
             {{option}}
           </div>
         </button>
-        <h2>{{cycleLength}} days</h2>
+
       </div>
 
       <div class="set-button col">
-        <button class="button button-stable button-outline" modal-select="" ng-model="currentDay" options="currentDayArray" modal-title="Select current day" on-select="setCurrentDay(currentDay)">
-          Set Current Day
+        <button class="button button-icon icon ion-android-calendar"
+        modal-select=""
+        ng-model="currentDay"
+        options="currentDayArray"
+        modal-title="Select current day"
+        on-select="setCurrentDay(currentDay)">
+          <!-- Set Current Day -->
           <div class="option">
             {{option}}
           </div>
         </button>
-        <h2>Day {{currentDay}}</h2>
       </div>
     </div>
 
