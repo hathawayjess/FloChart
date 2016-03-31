@@ -108,12 +108,12 @@ angular.module('starter.controllers', [])
 
   }
 
-  //http get once json is moved to the backend
 
   $scope.postData = function(userCycleLengthArray) {
 
     SettingsSvc.postCycleData(userCycleLengthArray)
       .success(function() {
+        console.log('SettingsCtrl ' + userCycleLengthArray);
         console.log('Success!');
       }).error(function() {
         console.log('Error!');
@@ -125,7 +125,7 @@ angular.module('starter.controllers', [])
 
 
 .controller('CalendarCtrl', function($scope, CalendarSvc, $ionicModal) {
-
+  $scope.$on('$ionicView.enter', function() {
 
   $ionicModal.fromTemplateUrl('../templates/modal-template-day-info.html', {
     id: '1',
@@ -171,7 +171,7 @@ angular.module('starter.controllers', [])
     // Execute action
   });
 
-  $scope.$on('$ionicView.enter', function() {
+  // $scope.$on('$ionicView.enter', function() {
 
     $scope.today = (new Date()).getDate();
 
@@ -179,6 +179,7 @@ angular.module('starter.controllers', [])
     $scope.getData = function() {
       CalendarSvc.getCycleData()
         .then(function(response) {
+          console.log('CalendarCtrl ' + response);
           $scope.cycleData = response;
 
           for (var i = 0; i < $scope.cycleData.length; i++) {

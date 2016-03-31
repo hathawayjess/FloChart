@@ -8,6 +8,7 @@ module.exports = {
   addCycleData: function(req, res, next) {
     CycleData.remove(function(error, data) {})
     CycleData.create(req.body, function(error, response) {
+      console.log('backendCtrl ' + req.body);
       if (error) return res.status(500).send(error);
       res.send(response);
     })
