@@ -11,7 +11,6 @@ angular.module('starter.controllers', [])
     SettingsSvc.getDayData()
       .then(function(response) {
         $scope.dayData = response;
-        console.log($scope.dayData)
       })
   }
 
@@ -124,8 +123,12 @@ angular.module('starter.controllers', [])
 })
 
 
-.controller('CalendarCtrl', function($scope, CalendarSvc, $ionicModal) {
-  $scope.$on('$ionicView.enter', function() {
+.controller('CalendarCtrl', function($scope, CalendarSvc, $ionicModal, $ionicLoading) {
+  $scope.$on('$ionicView.afterEnter', function() {
+
+    $ionicLoading.show({
+      template: '<ion-spinner icon="circles"></ion-spinner>'
+    })
 
   $ionicModal.fromTemplateUrl('../templates/modal-template-day-info.html', {
     id: '1',
@@ -171,7 +174,6 @@ angular.module('starter.controllers', [])
     // Execute action
   });
 
-  // $scope.$on('$ionicView.enter', function() {
 
     $scope.today = (new Date()).getDate();
 
@@ -180,6 +182,7 @@ angular.module('starter.controllers', [])
       CalendarSvc.getCycleData()
         .then(function(response) {
           console.log('CalendarCtrl ' + response);
+          $ionicLoading.hide();
           $scope.cycleData = response;
 
           for (var i = 0; i < $scope.cycleData.length; i++) {

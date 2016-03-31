@@ -35,6 +35,3 @@ module.exports = {
   }
 
 }
-
-//req.params.id
-//DayData.find index === req.params.id
