@@ -1,6 +1,5 @@
 <ion-modal-view overflow-scroll="false">
   <ion-content class="modal2">
-    <div class="close"><i class="icon ion-close-round" ng-click="closeModal(1)"></i></div>
     <div class="row font-style">
       <div class="est col"><i class="est estrogen-arrow" ng-class="{
       'icon ion-arrow-graph-up-right' : modal.days.phase === 1 || modal.days.phase === 2 || modal.days.phase === 'ovDay',
@@ -17,5 +16,14 @@
       <p>{{modal.days.data.string}}</p>
     </div>
 
+
+    <div class="row">
+      <h4 class="col" ng-click="postMood(1, modal.days._id)">Happy</h4>
+      <h4 class="col" ng-click="postMood(2, modal.days._id)">Sad</h4>
+      <h4 class="col" ng-click="postMood(3, modal.days._id)">Anxious</h4>
+      <h4 class="col" ng-click="postMood(4, modal.days._id)">Irritated</h4>
+    </div>
+
+    <button class="bar bar-footer button button-full button-positive" ng-click="closeModal(1)">Close</button>
   </ion-content>
 </ion-modal-view>

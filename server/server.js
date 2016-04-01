@@ -29,6 +29,8 @@ app.get('/data', backendCtrl.getCycleData);
 app.post('/daydata', backendCtrl.postDayData);
 app.get('/daydata', backendCtrl.getDayData);
 
+app.post('/mooddata', backendCtrl.postMoodData);
+
 
 
 

@@ -34,4 +34,13 @@ angular.module('starter.services', [])
     })
   }
 
+  this.postMoodData = function(moodData) {
+    return $http({
+      method: 'POST',
+      url: 'http://localhost:3000/mooddata/',
+      data: moodData
+    }).success(function(response) {
+      return response.data;
+    })
+  }
 })

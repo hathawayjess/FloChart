@@ -241,9 +241,9 @@ p {
   margin-right: 5px; }
 
 .modal {
-  top: 20% !important;
-  bottom: 20% !important;
-  min-height: 60% !important; }
+  top: 15% !important;
+  bottom: 15% !important;
+  min-height: 70% !important; }
 
 .modal2 h2 {
   color: gray; }

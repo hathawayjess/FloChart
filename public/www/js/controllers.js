@@ -11,6 +11,7 @@ angular.module('starter.controllers', [])
     SettingsSvc.getDayData()
       .then(function(response) {
         $scope.dayData = response;
+        console.log($scope.dayData);
       })
   }
 
@@ -112,7 +113,6 @@ angular.module('starter.controllers', [])
 
     SettingsSvc.postCycleData(userCycleLengthArray)
       .success(function() {
-        console.log('SettingsCtrl ' + userCycleLengthArray);
         console.log('Success!');
       }).error(function() {
         console.log('Error!');
@@ -181,9 +181,9 @@ angular.module('starter.controllers', [])
     $scope.getData = function() {
       CalendarSvc.getCycleData()
         .then(function(response) {
-          console.log('CalendarCtrl ' + response);
           $ionicLoading.hide();
           $scope.cycleData = response;
+
 
           for (var i = 0; i < $scope.cycleData.length; i++) {
             $scope.current = $scope.cycleData[i].current;
@@ -202,6 +202,20 @@ angular.module('starter.controllers', [])
 
 
     $scope.getData();
+
+    $scope.postMood = function(moodNumber, day) {
+      var moodData = {
+        mood: moodNumber,
+        _id: day
+      }
+      CalendarSvc.postMoodData(moodData)
+      .success(function() {
+        console.log('Mood Data Success!');
+      }).error(function() {
+        console.log('Mood Data Error!');
+      })
+    }
+
 
   })
 
