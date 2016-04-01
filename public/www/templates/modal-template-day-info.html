@@ -1,29 +1,30 @@
-<ion-modal-view overflow-scroll="false">
-  <ion-content class="modal2">
+<ion-modal-view>
+  <ion-content class="modal2" scroll="false">
     <div class="row font-style">
       <div class="est col"><i class="est estrogen-arrow" ng-class="{
       'icon ion-arrow-graph-up-right' : modal.days.phase === 1 || modal.days.phase === 2 || modal.days.phase === 'ovDay',
       'icon ion-arrow-graph-down-right' : modal.days.phase === 3 || modal.days.phase === 4
-    }"></i> ESTROGEN</div>
+    }"></i> <br>ESTROGEN</div>
 
       <div class="prog col"><i class="prog progesterone-arrow" ng-class="{
       'icon ion-arrow-graph-down-right' : modal.days.phase === 1 || modal.days.phase === 2,
       'icon ion-arrow-graph-up-right' : modal.days.phase === 'ovDay' || modal.days.phase === 3 || modal.days.phase === 4
-    }"></i> PROGESTERONE</div>
+    }"></i> <br>PROGESTERONE</div>
     </div>
 
     <div id="blurb">
       <p>{{modal.days.data.string}}</p>
     </div>
 
+    <h3 class="pink icon-title">How are you feeling today?</h3>
 
-    <div class="row">
-      <h4 class="col" ng-click="postMood(1, modal.days._id)">Happy</h4>
-      <h4 class="col" ng-click="postMood(2, modal.days._id)">Sad</h4>
-      <h4 class="col" ng-click="postMood(3, modal.days._id)">Anxious</h4>
-      <h4 class="col" ng-click="postMood(4, modal.days._id)">Irritated</h4>
+    <div class="row icons">
+      <span class="col mood-icon-happy" ng-class="{'active' : isActive1}" ng-click="setMoodNumber(1); isActive1 = !isActive1; isActive2 = false; isActive3 = false; isActive4 = false"></span>
+      <span class="col mood-icon-sad" ng-class="{'active' : isActive2}" ng-click="setMoodNumber(2); isActive2 = !isActive2; isActive1 = false; isActive3 = false; isActive4 = false"></span>
+      <span class="col mood-icon-frustrated" ng-class="{'active' : isActive3}" ng-click="setMoodNumber(3); isActive3 = !isActive3; isActive1 = false; isActive2 = false; isActive4 = false"></span>
+      <span class="col mood-icon-wondering" ng-class="{'active' : isActive4}" ng-click="setMoodNumber(4); isActive4 = !isActive4; isActive1 = false; isActive2 = false; isActive3 = false"></span>
     </div>
 
-    <button class="bar bar-footer button button-full button-positive" ng-click="closeModal(1)">Close</button>
+    <button class="bar footer button button-full button-positive" ng-click="postMood(modal.days._id); isActive1 = false; isActive2 = false; isActive3 = false; isActive4 = false; closeModal(1)">Close</button>
   </ion-content>
 </ion-modal-view>

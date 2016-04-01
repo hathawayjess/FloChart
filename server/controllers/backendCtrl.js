@@ -14,6 +14,7 @@ module.exports = {
   },
   getCycleData: function(req, res, next) {
     CycleData.find(req.body)
+    .sort("_id")
       .exec(function(error, data) {
         if (error) return res.status(500).send(error);
         return res.status(200).send(data);

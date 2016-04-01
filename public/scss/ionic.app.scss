@@ -17,9 +17,29 @@ $dark:                            #444 !default;
 $positive: #BBBB88 !default;
 $stable: #BBBB88 !default;
 
+.active {
+  color: #EEAA88;
+}
+
+.footer {
+  position: fixed !important;
+  bottom: 0 !important;
+  margin-bottom: 0 !important;
+}
+
 ion-content, .card {
 background-color: #ffffff;
 background-image: url("../img/tiny-grid.png");
+}
+
+.icon-title {
+  text-align: center;
+}
+
+.icons {
+  font-size: 3em !important;
+  text-align: center;
+  color: #BBBB88;
 }
 
 .white {
@@ -166,7 +186,8 @@ p {
 #blurb p {
   font-size: 1.2em;
   line-height: 1.2;
-  padding: 15px;
+  padding-left: 10px;
+  padding-bottom: 15px;
 }
 .chart {
   height: 50%;
@@ -254,6 +275,7 @@ p {
 .font-style {
   font-weight: 500;
   letter-spacing: 0.05em;
+  text-align: center;
 }
 .est {
   color: #EEAA88;
@@ -268,14 +290,15 @@ p {
 }
 
 .modal {
-  top: 15% !important;
-  bottom: 15% !important;
-  min-height: 70% !important;
+  top: 12.5% !important;
+  bottom: 12.5% !important;
+  min-height: 75% !important;
 }
 
 .modal2 {
 
 }
+
 .modal2 h2 {
   color: gray;
 }
@@ -291,6 +314,113 @@ p {
 .phase4-modal {
   color: #B1C19F;
 }
+
+//ICON FONT
+@font-face {
+    font-family: 'icomoon';
+    src:    url('../lib/ionic/fonts/icomoon.eot?3npnqd');
+    src:    url('../lib/ionic/fonts/icomoon.eot?3npnqd#iefix') format('embedded-opentype'),
+        url('../lib/ionic/fonts/icomoon.ttf?3npnqd') format('truetype'),
+        url('../lib/ionic/fonts/icomoon.woff?3npnqd') format('woff'),
+        url('../lib/ionic/fonts/icomoon.svg?3npnqd#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="mood-icon-"], [class*=" mood-icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.mood-icon-happy:before {
+    content: "\e900";
+}
+.mood-icon-happy2:before {
+    content: "\e901";
+}
+.mood-icon-smile:before {
+    content: "\e902";
+}
+.mood-icon-smile2:before {
+    content: "\e903";
+}
+.mood-icon-tongue:before {
+    content: "\e904";
+}
+.mood-icon-tongue2:before {
+    content: "\e905";
+}
+.mood-icon-sad:before {
+    content: "\e906";
+}
+.mood-icon-sad2:before {
+    content: "\e907";
+}
+.mood-icon-wink:before {
+    content: "\e908";
+}
+.mood-icon-wink2:before {
+    content: "\e909";
+}
+.mood-icon-grin:before {
+    content: "\e90a";
+}
+.mood-icon-grin2:before {
+    content: "\e90b";
+}
+.mood-icon-angry:before {
+    content: "\e90c";
+}
+.mood-icon-angry2:before {
+    content: "\e90d";
+}
+.mood-icon-baffled:before {
+    content: "\e90e";
+}
+.mood-icon-baffled2:before {
+    content: "\e90f";
+}
+.mood-icon-confused:before {
+    content: "\e910";
+}
+.mood-icon-confused2:before {
+    content: "\e911";
+}
+.mood-icon-neutral:before {
+    content: "\e912";
+}
+.mood-icon-neutral2:before {
+    content: "\e913";
+}
+.mood-icon-wondering:before {
+    content: "\e914";
+}
+.mood-icon-wondering2:before {
+    content: "\e915";
+}
+.mood-icon-frustrated:before {
+    content: "\e916";
+}
+.mood-icon-frustrated2:before {
+    content: "\e917";
+}
+.mood-icon-crying:before {
+    content: "\e918";
+}
+.mood-icon-crying2:before {
+    content: "\e919";
+}
+
 // The path for our ionicons font files, relative to the built CSS in www/css
 $ionicons-font-path: "../lib/ionic/fonts" !default; // Include all of Ionic
 @import "www/lib/ionic/scss/ionic";
