@@ -220,7 +220,8 @@ angular.module('starter.controllers', [])
     $scope.postMood = function(day) {
       var moodData = {
         mood: $scope.moodNumber,
-        _id: day
+        _id: day,
+        date: new Date()
       }
       CalendarSvc.postMoodData(moodData)
       .success(function() {

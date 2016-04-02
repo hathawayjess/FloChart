@@ -24,7 +24,10 @@
       <span class="col mood-icon-frustrated" ng-class="{'active' : isActive3}" ng-click="setMoodNumber(3); isActive3 = !isActive3; isActive1 = false; isActive2 = false; isActive4 = false"></span>
       <span class="col mood-icon-wondering" ng-class="{'active' : isActive4}" ng-click="setMoodNumber(4); isActive4 = !isActive4; isActive1 = false; isActive2 = false; isActive3 = false"></span>
     </div>
-
-    <button class="bar footer button button-full button-positive" ng-click="postMood(modal.days._id); isActive1 = false; isActive2 = false; isActive3 = false; isActive4 = false; closeModal(1)">Close</button>
+    <div class="row">
+<button class="col button button-clear pink" ng-click="postMood(modal.days._id)">Save Mood</button>
+<!-- <button class="col button button-clear pink">Go to Graph</button> -->
+</div>
+    <button class="bar footer button button-full button-positive" ng-click="isActive1 = false; isActive2 = false; isActive3 = false; isActive4 = false; closeModal(1)">Close</button>
   </ion-content>
 </ion-modal-view>
