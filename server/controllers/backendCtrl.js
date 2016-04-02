@@ -14,7 +14,7 @@ module.exports = {
   },
   getCycleData: function(req, res, next) {
     CycleData.find(req.body)
-    .sort("_id")
+      .sort("_id")
       .exec(function(error, data) {
         if (error) return res.status(500).send(error);
         return res.status(200).send(data);
@@ -45,6 +45,13 @@ module.exports = {
       res.send(response);
     });
 
+  },
+  getMoodData: function(req, res, next) {
+    MoodData.find(req.body)
+    .exec(function(error, data) {
+      if (error) return res.status(500).send(error);
+      res.send(data);
+    })
   }
 
 

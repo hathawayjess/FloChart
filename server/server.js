@@ -30,6 +30,8 @@ app.post('/daydata', backendCtrl.postDayData);
 app.get('/daydata', backendCtrl.getDayData);
 
 app.post('/mooddata', backendCtrl.postMoodData);
+app.get('/mooddata', backendCtrl.getMoodData);
+
 
 
 

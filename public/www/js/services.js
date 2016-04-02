@@ -44,3 +44,14 @@ angular.module('starter.services', [])
     })
   }
 })
+
+.service('DashSvc', function($http) {
+  this.getMoodData = function() {
+    return $http({
+      method: 'GET',
+      url: 'http://localhost:3000/mooddata/'
+    }).then(function(response) {
+      return response.data;
+    })
+  }
+})

@@ -1,6 +1,33 @@
 angular.module('starter.controllers', [])
 
-.controller('DashCtrl', function($scope) {
+.controller('DashCtrl', function($scope, DashSvc) {
+  $scope.data = [];
+  $scope.options = {
+    thickness: 10
+  };
+  var colors = ["#EEDD99", "#B1C19F", "#EEAA88", "#BBBB88"];
+
+
+  $scope.getMoodData = function() {
+    DashSvc.getMoodData()
+      .then(function(response) {
+        $scope.moodData = response;
+        function alter(response) {
+          return {
+            label : response._id,
+            value: 1,
+            color: colors[response.mood]
+          }
+        }
+        $scope.data = response.map(alter);
+        console.log($scope.data);
+      })
+  }
+
+    $scope.getMoodData();
+
+
+
 
 })
 
@@ -128,38 +155,38 @@ angular.module('starter.controllers', [])
 
 .controller('CalendarCtrl', function($scope, CalendarSvc, $ionicModal, $ionicLoading) {
 
-    $ionicLoading.show({
-      template: '<ion-spinner icon="circles"></ion-spinner>'
-    })
+  $ionicLoading.show({
+    template: '<ion-spinner icon="circles"></ion-spinner>'
+  })
 
 
-        $scope.today = (new Date()).getDate();
+  $scope.today = (new Date()).getDate();
 
 
-        $scope.getData = function() {
-          CalendarSvc.getCycleData()
-            .then(function(response) {
-              $ionicLoading.hide();
-              $scope.cycleData = response;
+  $scope.getData = function() {
+    CalendarSvc.getCycleData()
+      .then(function(response) {
+        $ionicLoading.hide();
+        $scope.cycleData = response;
 
 
-              for (var i = 0; i < $scope.cycleData.length; i++) {
-                $scope.current = $scope.cycleData[i].current;
-                $scope.date = $scope.cycleData[i].date;
+        for (var i = 0; i < $scope.cycleData.length; i++) {
+          $scope.current = $scope.cycleData[i].current;
+          $scope.date = $scope.cycleData[i].date;
 
-                if ($scope.current === true && $scope.date < $scope.today) {
-                  $scope.cycleData[i].current = false;
-                  i = i + ($scope.today - $scope.date);
-                  $scope.cycleData[i].current = true;
-                }
+          if ($scope.current === true && $scope.date < $scope.today) {
+            $scope.cycleData[i].current = false;
+            i = i + ($scope.today - $scope.date);
+            $scope.cycleData[i].current = true;
+          }
 
-              }
-
-            })
         }
 
+      })
+  }
 
-        $scope.getData();
+
+  $scope.getData();
 
   $ionicModal.fromTemplateUrl('../templates/modal-template-day-info.html', {
     id: '1',
@@ -217,19 +244,19 @@ angular.module('starter.controllers', [])
     $scope.moodNumber = number;
   }
 
-    $scope.postMood = function(day) {
-      var moodData = {
-        mood: $scope.moodNumber,
-        _id: day,
-        date: new Date()
-      }
-      CalendarSvc.postMoodData(moodData)
+  $scope.postMood = function(day) {
+    var moodData = {
+      mood: $scope.moodNumber,
+      _id: day,
+      date: new Date()
+    }
+    CalendarSvc.postMoodData(moodData)
       .success(function() {
         console.log('Mood Data Success!');
       }).error(function() {
         console.log('Mood Data Error!');
       })
-    }
+  }
 
 
 
