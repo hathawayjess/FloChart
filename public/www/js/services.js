@@ -45,7 +45,7 @@ angular.module('starter.services', [])
   }
 })
 
-.service('DashSvc', function($http) {
+.service('GraphSvc', function($http) {
   this.getMoodData = function() {
     return $http({
       method: 'GET',

@@ -79,6 +79,17 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
         controller: 'CalendarCtrl'
       }
     }
+  })
+
+  .state('tab.graph', {
+    cache: false,
+    url: '/graph',
+    views: {
+      'tab-graph': {
+        templateUrl: 'templates/tab-graph.html',
+        controller: 'GraphCtrl'
+      }
+    }
   });
 
   // if none of the above states are matched, use this as the fallback

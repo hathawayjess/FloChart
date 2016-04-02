@@ -1,19 +1,20 @@
 angular.module('starter.controllers', [])
 
-.controller('DashCtrl', function($scope, DashSvc) {
+.controller('GraphCtrl', function($scope, GraphSvc) {
   $scope.data = [];
   $scope.options = {
-    thickness: 10
+    thickness: 50
   };
-  var colors = ["#EEDD99", "#B1C19F", "#EEAA88", "#BBBB88"];
+  var colors = ["#BBBB88", "#EEDD99", "#B1C19F", "#EEAA88", "#BBBB88"];
 
 
   $scope.getMoodData = function() {
-    DashSvc.getMoodData()
+    GraphSvc.getMoodData()
       .then(function(response) {
         $scope.moodData = response;
         function alter(response) {
           return {
+            complementBrightness: 90,
             label : response._id,
             value: 1,
             color: colors[response.mood]
@@ -26,6 +27,11 @@ angular.module('starter.controllers', [])
 
     $scope.getMoodData();
 
+
+
+})
+
+.controller('DashCtrl', function($scope) {
 
 
 

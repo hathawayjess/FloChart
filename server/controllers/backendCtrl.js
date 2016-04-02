@@ -48,6 +48,7 @@ module.exports = {
   },
   getMoodData: function(req, res, next) {
     MoodData.find(req.body)
+    .sort("_id")
     .exec(function(error, data) {
       if (error) return res.status(500).send(error);
       res.send(data);
