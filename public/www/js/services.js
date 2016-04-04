@@ -34,4 +34,24 @@ angular.module('starter.services', [])
     })
   }
 
+  this.postMoodData = function(moodData) {
+    return $http({
+      method: 'POST',
+      url: 'http://localhost:3000/mooddata/',
+      data: moodData
+    }).success(function(response) {
+      return response.data;
+    })
+  }
+})
+
+.service('GraphSvc', function($http) {
+  this.getMoodData = function() {
+    return $http({
+      method: 'GET',
+      url: 'http://localhost:3000/mooddata/'
+    }).then(function(response) {
+      return response.data;
+    })
+  }
 })

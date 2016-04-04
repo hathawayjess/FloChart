@@ -12,7 +12,8 @@ var cycleSchema = new Schema({
     type: Schema.Types.Mixed
   },
   data: {
-      string: {type: String}
+      string: {type: String},
+      mood: {type: Number}
   },
   current: {
     type: Boolean

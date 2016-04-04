@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'ionic-modal-select'])
+angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'ionic-modal-select', 'n3-pie-chart'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -77,6 +77,17 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
       'tab-calendar': {
         templateUrl: 'templates/tab-calendar.html',
         controller: 'CalendarCtrl'
+      }
+    }
+  })
+
+  .state('tab.graph', {
+    cache: false,
+    url: '/graph',
+    views: {
+      'tab-graph': {
+        templateUrl: 'templates/tab-graph.html',
+        controller: 'GraphCtrl'
       }
     }
   });
