@@ -12,10 +12,11 @@ angular.module('starter.controllers', [])
     GraphSvc.getMoodData()
       .then(function(response) {
         $scope.moodData = response;
+
         function alter(response) {
           return {
             complementBrightness: 90,
-            label : response._id,
+            label: response._id,
             value: 1,
             color: colors[response.mood]
           }
@@ -25,7 +26,7 @@ angular.module('starter.controllers', [])
       })
   }
 
-    $scope.getMoodData();
+  $scope.getMoodData();
 
 
 
