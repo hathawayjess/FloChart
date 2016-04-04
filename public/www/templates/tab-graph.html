@@ -1,7 +1,25 @@
 <ion-view view-title="Graph">
-  <ion-content class="padding" overflow-scroll="false">
+  <ion-content scroll="false">
 
       <pie-chart data="data" options="options"></pie-chart>
+
+          <h3 class="moods-title green">Monthly Moods</h3>
+
+          <h4 class="moods-center green icon ion-load-c"></h4>
+
+          <p id="one" class="green">1</p>
+
+ <div class="legend-wrapper">
+      <div class="row center legend left">
+        <div class="icon ion-stop col" id="yellow"> <span class="legend-text">Happy</span></div>
+        <div class="icon ion-stop col" id="blue"> <span class="legend-text">Sad</span></div>
+      </div>
+
+      <div class="row center legend right">
+        <div class="icon ion-stop col" id="red"> <span class="legend-text">Angry</span></div>
+        <div class="icon ion-stop col" id="green"> <span class="legend-text">Anxious</span></div>
+      </div>
+    </div>
 
   </ion-content>
 </ion-view>

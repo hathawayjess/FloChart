@@ -15,6 +15,78 @@ $assertive:                       #ef473a !default;
 $royal:                           #886aea !default;
 $dark:                            #444 !default;
 */
+@import url(https://fonts.googleapis.com/css?family=Lato:400,700);
+.legend {
+  position: relative;
+  bottom: 0; }
+
+.legend div {
+  text-align: left; }
+
+.legend-wrapper {
+  position: absolute;
+  bottom: 10px;
+  left: 15%;
+  right: 15%;
+  font-size: 2em; }
+
+.legend-text {
+  font-size: .6em !important;
+  padding-left: 2px;
+  text-transform: uppercase;
+  color: gray; }
+
+.left {
+  float: left; }
+
+.right {
+  float: right; }
+
+#yellow {
+  color: #EEDD99; }
+
+#blue {
+  color: #B1C19F; }
+
+#red {
+  color: #EEAA88; }
+
+#green {
+  color: #BBBB88; }
+
+* {
+  font-family: "Lato", sans-serif; }
+
+.settings .card {
+  margin-top: 25px; }
+
+.moods-title {
+  text-align: center;
+  position: absolute;
+  top: 2.5%;
+  left: 25%;
+  right: 25%; }
+
+#one {
+  position: absolute;
+  top: 22.5%;
+  left: 48.3%;
+  font-size: 1.6em !important; }
+
+.moods-center {
+  text-align: center;
+  font-size: 18em;
+  position: absolute;
+  top: 17.5%;
+  left: 19%;
+  right: 25%;
+  opacity: 0.5;
+  -webkit-transform: rotate(272deg);
+  -moz-transform: rotate(272deg);
+  -ms-transform: rotate(272deg);
+  -o-transform: rotate(272deg);
+  transform: rotate(272deg); }
+
 .active {
   color: #EEAA88; }
 
@@ -35,8 +107,12 @@ ion-content, .card {
   text-align: center;
   color: #BBBB88; }
 
-.white {
+.bar.bar-stable .title, .modal-select-close-button {
   color: #fff !important; }
+
+.modal-select-close-button {
+  font-size: 1.3em !important;
+  text-align: center; }
 
 .green {
   color: #BBBB88 !important; }
@@ -70,8 +146,9 @@ ion-content, .card {
 
 button.button.button-icon:before {
   font-size: 12em !important;
-  color: #EDEBD3;
-  margin-bottom: 70px; }
+  color: #EEC290;
+  margin-bottom: 70px;
+  opacity: .4; }
 
 .set-button {
   text-align: center;
@@ -160,10 +237,11 @@ p {
   padding-top: 5px !important; }
 
 #blurb p {
-  font-size: 1.2em;
+  font-size: 1.3em !important;
   line-height: 1.2;
   padding-left: 10px;
-  padding-bottom: 15px; }
+  padding-bottom: 15px;
+  padding-top: 5px; }
 
 .chart {
   height: 50%; }
@@ -210,7 +288,7 @@ p {
   padding-top: 20px !important; }
 
 .options-row {
-  margin-top: 30px; }
+  margin-top: 20px; }
 
 .save-button {
   text-align: center;
@@ -262,7 +340,7 @@ p {
 .modal {
   top: 10% !important;
   bottom: 10% !important;
-  min-height: 80% !important; }
+  min-height: 85% !important; }
 
 .modal2 h2 {
   color: gray; }
@@ -278,6 +356,32 @@ p {
 
 .phase4-modal {
   color: #B1C19F; }
+
+.slice path {
+  stroke: #fff;
+  stroke-width: 1px; }
+
+.textTop {
+  font-family: 'Segoe UI';
+  font-size: 12pt;
+  fill: #bbb; }
+
+.textBottom {
+  fill: #444;
+  font-family: 'Segoe UI';
+  font-weight: bold;
+  font-size: 18pt; }
+
+.top {
+  border: 1px solid #bbb;
+  color: #777;
+  font-family: 'Segoe UI';
+  padding: 5px;
+  text-decoration: none; }
+
+.top:hover {
+  border: 1px solid #555;
+  color: #333; }
 
 @font-face {
   font-family: 'icomoon';
