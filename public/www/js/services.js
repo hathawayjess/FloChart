@@ -1,4 +1,4 @@
-angular.module('starter.services', [])
+angular.module('flochart.services', [])
 
 .service('SettingsSvc', function($http) {
 
@@ -55,3 +55,4 @@ angular.module('starter.services', [])
     })
   }
 })
+

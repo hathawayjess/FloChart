@@ -1,56 +1,48 @@
-angular.module('starter.controllers', [])
+angular.module('flochart.controllers', [])
 
 .controller('GraphCtrl', function($scope, GraphSvc) {
+
   $scope.data = [];
   $scope.options = {
     thickness: 50
   };
-  var colors = ["#BBBB88", "#EEDD99", "#B1C19F", "#EEAA88", "#BBBB88"];
 
+  var colors = ["#BBBB88", "#EEDD99", "#B1C19F", "#EEAA88", "#BBBB88"];
 
   $scope.getMoodData = function() {
     GraphSvc.getMoodData()
-      .then(function(response) {
-        $scope.moodData = response;
+    .then(function(response) {
+      $scope.moodData = response;
 
-        function alter(response) {
-          return {
-            complementBrightness: 90,
-            label: response._id,
-            value: 1,
-            color: colors[response.mood]
-          }
+      function alter(response) {
+        return {
+          complementBrightness: 90,
+          label: response._id,
+          value: 1,
+          color: colors[response.mood]
         }
-        $scope.data = response.map(alter);
-        console.log($scope.data);
-      })
+      }
+      $scope.data = response.map(alter);
+      console.log($scope.data);
+    })
   }
-
   $scope.getMoodData();
 
-
-
 })
 
-.controller('DashCtrl', function($scope) {
-
-
-
-})
-
+.controller('DashCtrl', function($scope) {})
 
 .controller('SettingsCtrl', function($scope, SettingsSvc, $state) {
 
   $scope.getDayData = function() {
     SettingsSvc.getDayData()
-      .then(function(response) {
-        $scope.dayData = response;
-        console.log($scope.dayData);
-      })
+    .then(function(response) {
+      $scope.dayData = response;
+      console.log($scope.dayData);
+    })
   }
 
   $scope.getDayData();
-
 
   $scope.cycleLength = 28;
   $scope.currentDay = 1;
@@ -65,7 +57,6 @@ angular.module('starter.controllers', [])
   $scope.userCycleLengthArray = [];
   $scope.today = new Date();
 
-
   $scope.setPhase = function(i) {
     if (i < ($scope.cycleLength - 14) / 2) {
       return 1;
@@ -78,7 +69,6 @@ angular.module('starter.controllers', [])
     } else {
       return 4;
     }
-
   }
 
   $scope.setCurrentDay = function(val) {
@@ -87,18 +77,13 @@ angular.module('starter.controllers', [])
   $scope.setCycleLength = function(val) {
     $scope.cycleLength = val;
   }
-
   $scope.setCurrentDayTrue = function(i) {
-
     if (i === $scope.currentDay) {
       return true;
     } else {
       return false;
     }
-
   }
-
-
 
   $scope.setDayData = function(i) {
     $scope.cycleMinus = ($scope.cycleLength - 14);
@@ -115,9 +100,7 @@ angular.module('starter.controllers', [])
   $scope.setDayData2 = function(i) {
     $scope.setDayData(i)
     return $scope.userFullArray[i]
-
   }
-
 
   $scope.createDay = function(i) {
     var dayObj = {
@@ -129,36 +112,29 @@ angular.module('starter.controllers', [])
       date: $scope.today.getDate()
     }
     return dayObj;
-
   }
 
   $scope.changedCycleLength = function(val) {
-
     $scope.userCycleLengthArray = [];
     for (var i = 1; i <= val; i++) {
       $scope.userCycleLengthArray.push($scope.createDay(i));
     }
     return $scope.userCycleLengthArray;
-
   }
-
 
   $scope.postData = function(userCycleLengthArray) {
 
     SettingsSvc.postCycleData(userCycleLengthArray, $state)
-      .success(function() {
-        console.log('Success!');
-        $state.go('tab.calendar');
-      }).error(function() {
-        console.log('Error!');
-      })
+    .success(function() {
+      console.log('Success!');
+      $state.go('tab.calendar');
+    }).error(function() {
+      console.log('Error!');
+    })
 
   }
 
-
-
 })
-
 
 .controller('CalendarCtrl', function($scope, CalendarSvc, $ionicModal, $ionicLoading) {
 
@@ -166,32 +142,28 @@ angular.module('starter.controllers', [])
     template: '<ion-spinner icon="circles"></ion-spinner>'
   })
 
-
   $scope.today = (new Date()).getDate();
-
 
   $scope.getData = function() {
     CalendarSvc.getCycleData()
-      .then(function(response) {
-        $ionicLoading.hide();
-        $scope.cycleData = response;
+    .then(function(response) {
+      $ionicLoading.hide();
+      $scope.cycleData = response;
 
+      for (var i = 0; i < $scope.cycleData.length; i++) {
+        $scope.current = $scope.cycleData[i].current;
+        $scope.date = $scope.cycleData[i].date;
 
-        for (var i = 0; i < $scope.cycleData.length; i++) {
-          $scope.current = $scope.cycleData[i].current;
-          $scope.date = $scope.cycleData[i].date;
-
-          if ($scope.current === true && $scope.date < $scope.today) {
-            $scope.cycleData[i].current = false;
-            i = i + ($scope.today - $scope.date);
-            $scope.cycleData[i].current = true;
-          }
-
+        if ($scope.current === true && $scope.date < $scope.today) {
+          $scope.cycleData[i].current = false;
+          i = i + ($scope.today - $scope.date);
+          $scope.cycleData[i].current = true;
         }
 
-      })
-  }
+      }
 
+    })
+  }
 
   $scope.getData();
 
@@ -201,7 +173,6 @@ angular.module('starter.controllers', [])
     animation: 'scale-in'
   }).then(function(modal) {
     $scope.modal = modal;
-
   });
 
   $ionicModal.fromTemplateUrl('../templates/modal-template-phase-info.html', {
@@ -225,6 +196,7 @@ angular.module('starter.controllers', [])
       $scope.modal2.show();
     }
   };
+
   $scope.closeModal = function(index) {
     if (index === 1) {
       $scope.modal.hide();
@@ -232,6 +204,7 @@ angular.module('starter.controllers', [])
       $scope.modal2.hide();
     }
   };
+
   //Cleanup the modal when we're done with it!
   $scope.$on('$destroy', function() {
     $scope.modal.remove();
@@ -258,13 +231,12 @@ angular.module('starter.controllers', [])
       date: new Date()
     }
     CalendarSvc.postMoodData(moodData)
-      .success(function() {
-        console.log('Mood Data Success!');
-      }).error(function() {
-        console.log('Mood Data Error!');
-      })
+    .success(function() {
+      console.log('Mood Data Success!');
+    }).error(function() {
+      console.log('Mood Data Error!');
+    })
   }
 
-
-
 })
+

@@ -31,7 +31,7 @@ $dark:                            #444 !default;
   font-size: 2em; }
 
 .legend-text {
-  font-size: .6em !important;
+  font-size: 0.6em !important;
   padding-left: 2px;
   text-transform: uppercase;
   color: gray; }
@@ -95,7 +95,8 @@ $dark:                            #444 !default;
   bottom: 0 !important;
   margin-bottom: 0 !important; }
 
-ion-content, .card {
+ion-content,
+.card {
   background-color: #ffffff;
   background-image: url("../img/tiny-grid.png"); }
 
@@ -107,7 +108,8 @@ ion-content, .card {
   text-align: center;
   color: #BBBB88; }
 
-.bar.bar-stable .title, .modal-select-close-button {
+.bar.bar-stable .title,
+.modal-select-close-button {
   color: #fff !important; }
 
 .modal-select-close-button {
@@ -148,7 +150,7 @@ button.button.button-icon:before {
   font-size: 12em !important;
   color: #EEC290;
   margin-bottom: 70px;
-  opacity: .4; }
+  opacity: 0.4; }
 
 .set-button {
   text-align: center;
@@ -385,7 +387,8 @@ p {
   font-weight: normal;
   font-style: normal; }
 
-[class^="mood-icon-"], [class*=" mood-icon-"] {
+[class^="mood-icon-"],
+[class*=" mood-icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'icomoon' !important;
   speak: none;
