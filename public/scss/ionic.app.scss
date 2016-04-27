@@ -71,12 +71,12 @@ $stable: #BBBB88 !default;
 #one {
   position: absolute;
   top: 22.5%;
-  left: 48.3%;
+  left: 48.4%;
   font-size: 1.6em !important;
 }
 .moods-center {
   text-align: center;
-  font-size: 18em;
+  font-size: 22em;
   position: absolute;
   top: 17.5%;
   left: 19%;
@@ -248,6 +248,7 @@ p {
 }
 .chart {
   height: 50%;
+  margin-top: 50px;
 }
 .chart img {
   max-width: 100%;
@@ -323,7 +324,7 @@ p {
   border: 1px solid #ffffff;
   padding: 10px;
   border-radius: 2px;
-  height: 65px;
+  height: 75px;
 }
 .font-style {
   font-weight: 500;
@@ -341,12 +342,6 @@ p {
   font-size: 3em;
   margin-right: 5px;
 }
-// .modal {
-//   top: 10% !important;
-//   bottom: 10% !important;
-//   min-height: 100% !important;
-// }
-.modal2 {}
 .modal2 h2 {
   color: gray;
 }

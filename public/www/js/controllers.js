@@ -23,7 +23,6 @@ angular.module('flochart.controllers', [])
         }
       }
       $scope.data = response.map(alter);
-      console.log($scope.data);
     })
   }
   $scope.getMoodData();
@@ -38,7 +37,6 @@ angular.module('flochart.controllers', [])
     SettingsSvc.getDayData()
     .then(function(response) {
       $scope.dayData = response;
-      console.log($scope.dayData);
     })
   }
 
@@ -239,4 +237,3 @@ angular.module('flochart.controllers', [])
   }
 
 })
-
