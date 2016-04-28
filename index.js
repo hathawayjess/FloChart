@@ -11,7 +11,7 @@ const
 , corsOptions = {origin : 'http://127.0.0.1:' + port}
 
 mongoose.set('debug', true)
-mongoose.connect('mongodb://localhost/cycleData')
+mongoose.connect('mongodb://127.0.0.1/cycleData')
 mongoose.connection.once('open', () => console.log('Connected to MongoDB'))
 
 app
