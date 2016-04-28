@@ -5,7 +5,7 @@ angular.module('flochart.services', [])
   this.postCycleData = function(userCycleLengthArray) {
     return $http({
       method: 'POST',
-      url: 'http://localhost:3000/data/',
+      url: '/data/',
       data: userCycleLengthArray
     }).success(function(response) {
       return response.data;
@@ -15,7 +15,7 @@ angular.module('flochart.services', [])
   this.getDayData = function() {
     return $http({
       method: 'GET',
-      url: 'http://localhost:3000/daydata/'
+      url: '/daydata/'
     }).then(function(response, $scope) {
       return response.data;
     })
@@ -28,7 +28,7 @@ angular.module('flochart.services', [])
   this.getCycleData = function() {
     return $http({
       method: 'GET',
-      url: 'http://localhost:3000/data/'
+      url: '/data/'
     }).then(function(response) {
       return response.data;
     })
@@ -37,7 +37,7 @@ angular.module('flochart.services', [])
   this.postMoodData = function(moodData) {
     return $http({
       method: 'POST',
-      url: 'http://localhost:3000/mooddata/',
+      url: '/mooddata/',
       data: moodData
     }).success(function(response) {
       return response.data;
@@ -49,7 +49,7 @@ angular.module('flochart.services', [])
   this.getMoodData = function() {
     return $http({
       method: 'GET',
-      url: 'http://localhost:3000/mooddata/'
+      url: '/mooddata/'
     }).then(function(response) {
       return response.data;
     })
